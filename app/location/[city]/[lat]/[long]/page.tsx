@@ -34,21 +34,21 @@ const WeatherPage = async ({ params: { city, lat, long } }: Props) => {
 
   const results: Root = data.myQuery;
 
-  const dataToSend = cleanData(results, city);
+  // const dataToSend = cleanData(results, city);
 
-  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      weatherData: dataToSend,
-    }),
-  });
+  // const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify({
+  //     weatherData: dataToSend,
+  //   }),
+  // });
 
-  const GPTdata = await res.json();
+  // const GPTdata = await res.json();
 
-  console.log(GPTdata);
+  // console.log(GPTdata);
   // console.log(results.daily.sunset[0]);
 
   return (
@@ -67,7 +67,7 @@ const WeatherPage = async ({ params: { city, lat, long } }: Props) => {
           </div>
 
           <div className="m-2 mb-10">
-            <CalloutCard message={GPTdata} />
+            <CalloutCard message={""} />
           </div>
 
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 m-2">
